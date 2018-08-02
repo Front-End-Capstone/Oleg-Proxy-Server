@@ -62,8 +62,8 @@ app.use('/events', (req, res) => {
   })
 })
 
-app.use('/api/data', (req, res) => {
-  request('http://localhost:3004/api/data', (error, response, body) => {
+app.use('/api/data/all', (req, res) => {
+  request('http://localhost:3004/api/data/all', (error, response, body) => {
     if(!error) {
       console.log('bundle 3004 recieved')
       res.status(200).send(body)
@@ -71,8 +71,8 @@ app.use('/api/data', (req, res) => {
   })
 })
 
-app.use('/api/data/all', (req, res) => {
-  request('http://localhost:3004/api/data/all', (error, response, body) => {
+app.use('/api/data', (req, res) => {
+  request('http://localhost:3004/api/data', (error, response, body) => {
     if(!error) {
       console.log('bundle 3004 recieved')
       res.status(200).send(body)
