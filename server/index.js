@@ -28,6 +28,14 @@ app.get('/bundle.js/3002', (req, res) => {
   })
 })
 
+app.get('/bundle.js/3003', (req, res) => {
+  request('http://localhost:3003/bundle.js', (error, response, body) => {
+    if (!error) {
+      res.status(200).send(body);
+    }
+  })
+})
+
 app.get('/bundle.js/3004', (req, res) => {
   request('http://localhost:3004/bundle.js', (error, response, body) => {
     if (!error) {
@@ -62,6 +70,21 @@ app.use('/events', (req, res) => {
   })
 })
 
+app.use('/api/when', (req, res) => {
+  request('http://localhost:3003/api/when', (error, response, body) => {
+    if (!error) {
+      res.status(200).send(body);
+    }
+  })
+})
+
+app.use('/api/where', (req, res) => {
+  request('http://localhost:3003/api/where', (error, response, body) => {
+    if (!error) {
+      res.status(200).send(body);
+    }
+  })
+})
 app.use('/api/data/all', (req, res) => {
   request('http://localhost:3004/api/data/all', (error, response, body) => {
     if(!error) {
